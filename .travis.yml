@@ -36,7 +36,7 @@ after_success:
   - cd ./public
   - git init
   - git add .
-  - git commit -m "Update docs"
+  - git commit -m "update docs"
   #- sed -i'' "/^ *repo/s~github\.com~${githubToken}@github.com~" _config.yml
   - git push --force "https://${github_hexo_token}@${GH_REF}" master:master
   #- hexo deploy
