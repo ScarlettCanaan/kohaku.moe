@@ -13,6 +13,7 @@ cache:
 env:
   global:
     - GH_REF: github.com/ScarlettCanaan/kohaku.moe.git
+    - DATE: $(date -d now)
 
 # S: Build Lifecycle
 before_install:
@@ -36,7 +37,7 @@ after_success:
   - cd ./public
   - git init
   - git add .
-  - git commit -m "update docs"
+  - git commit -m "update docs on ${DATE}"
   #- sed -i'' "/^ *repo/s~github\.com~${githubToken}@github.com~" _config.yml
   - git push --force "https://${github_hexo_token}@${GH_REF}" master:master
   #- hexo deploy
